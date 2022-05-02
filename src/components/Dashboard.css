@@ -1,0 +1,14 @@
+.site-card-wrapper {
+    padding: 30px;
+    background: #ececec;
+  }
+
+.fullPage {
+    margin: 30px;
+    /* margin-left: 30px; */
+}
+
+.card {
+    padding: 30px;
+    border-color: #010101;
+}
