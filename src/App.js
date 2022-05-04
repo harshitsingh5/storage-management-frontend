@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dashboard/>} />
-        <Route path="/root" element={<Root title= 'Dropbox'/>} />
+        <Route path="/root" element={<Root />} />
         {/* <Route path="login" element={localStorage.getItem('authToken') ? <HomePage /> : <SocialAuth/> } />
         <Route exact path="/linkedin" element= {<LinkedInPopUp/>} /> */}
       </Routes>

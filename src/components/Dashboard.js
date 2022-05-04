@@ -19,19 +19,31 @@ const Dashboard = () => {
 	
 	const navigate = useNavigate();
 
+  const getDrive = () => {
+		axios
+			.post(`${baseURL}/drive/files-all/`, { folder_id: 'root' })
+			.then((res) => {
+				const fileList = res?.data?.fileList
+        // console.log("🚀 ~ file: Dashboard.js ~ line 28 ~ .then ~ drive fileList", fileList)
+				// console.log("navigating...");
+				navigate(
+					 '/root',
+					{ state: { contents: fileList, title: "Google Drive", folderTitle: "Root Folder"	}, }
+				);
+			})
+	}
+  
+
 	const getDropbox = () => {
-		console.log("inside dropbox");
 		axios
 			.post(`${baseURL}/dropbox/files-all/`, { folder_path: '' })
 			.then((res) => {
 				const fileList = res?.data?.fileList
-        console.log("🚀 ~ file: Dashboard.js ~ line 28 ~ .then ~ fileList", fileList)
-				// window.location = "/root";
-				// <Root title="Dropbox" />
-				console.log("navigating...");
+        // console.log("🚀 ~ file: Dashboard.js ~ line 28 ~ .then ~ dropbox fileList", fileList)
+				// console.log("navigating...");
 				navigate(
 					 '/root',
-					{ state: { contents: fileList	}, }
+					{ state: { contents: fileList, title: "Dropbox", folderTitle: "Root Folder"	}, }
 				);
 			})
 	}
@@ -61,6 +73,9 @@ const Dashboard = () => {
 			<Card
         hoverable
         style={{ width: 240, height: 300 }}
+        onClick={() => {
+					getDrive();
+				}}
         cover={
           <img
             alt="drive logo"
