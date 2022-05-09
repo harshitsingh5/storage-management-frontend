@@ -1,7 +1,8 @@
 .linuxRow {
     display: flex;
 		justify-content: space-between;
-		max-width: 50%;
+		max-width: 75%;
+		min-height: 50px;
     /* grid-template-columns: repeat(2, 1fr); */
     /* column-gap: 10px; */
   }
@@ -28,17 +29,38 @@ border-bottom: 1px solid #dedede;
 }
 
 .icon svg{
-	font-size: 16px;
+	font-size: 20px;
+}
+
+.backButton {
+	
+	align-items: center;
+}
+
+.backButtonText {
+	cursor: pointer;
+	margin-bottom: 5px;
 }
 
 .folderTitle {
 	font-size: 20px;
+	margin-left: 10px;
+	margin-bottom: 3px;
+}
+
+.folderTitleLineBackButton {
+	margin-top: 50px;
 }
 
 .folderTitleLine {
-	margin-top: 50px;
+	margin-top: 25px;
 	margin-bottom: 15px;
 	display: flex;
 	justify-content: space-between;
-	max-width: 50%;
+	max-width: 75%;
+}
+
+.emptyFolder {
+	max-width: 75%;
+	margin-top: 100px;
 }
